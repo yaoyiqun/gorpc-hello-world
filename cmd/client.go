@@ -20,5 +20,7 @@ var clientCmd = &cobra.Command{
 }
 
 func init() {
+	serverCmd.Flags().StringVarP(&client.CertPemPath, "client cert-pem", "", "./certs/client.pem", "client cert pem path")
+	serverCmd.Flags().StringVarP(&client.CertKeyPath, "client cert-key", "", "./certs/client.key", "client cert key path")
 	rootCmd.AddCommand(clientCmd)
 }
